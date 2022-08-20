@@ -5,6 +5,30 @@
         Usually Tomcat will copy this file to $CATALINA_BASE/conf/[enginename]/[hostname]/SensorThingsServer.xml
         Override=true means Tomcat uses the value configured in web.xml
     -->
+    <Parameter override="false" name="serviceRootUrl" value="http://localhost:8080/FROST-Server" />
+    <Parameter override="false" name="defaultCount" value="false" />
+    <Parameter override="false" name="alwaysOrderbyId" value="true" />
+    <Parameter override="false" name="defaultTop" value="100" />
+    <Parameter override="false" name="maxTop" value="1000" />
+    <Parameter override="false" name="maxDataSize" value="25000000" />
+    <Parameter override="false" name="useAbsoluteNavigationLinks" value="true" />
+    <Parameter override="false" name="http.cors.enable" value="true" />
+    <Parameter override="false" name="plugins.plugins" value="" />
+    <Parameter override="false" name="plugins.coreModel.enable" value="true" />
+    <Parameter override="false" name="plugins.coreModel.idType" value="LONG" />
+    <Parameter override="false" name="plugins.actuation.enable" value="true" />
+    <Parameter override="false" name="plugins.multiDatastream.enable" value="true" />
+    <Parameter override="false" name="plugins.openApi.enable" value="true" />
+    <Parameter override="false" name="plugins.geojson.enable" value="true" />
+    <Parameter override="false" name="plugins.odata.enable" value="true" />
+    <Parameter override="false" name="plugins.modelLoader.enable" value="false" />
+    <Parameter override="false" name="plugins.modelLoader.modelPath" value="/home/hylke/NetBeansProjects/BauhausML/FROST-Plugin.Catalog/data/model" />
+    <Parameter override="false" name="plugins.modelLoader.modelFiles" value="bml_Api.json,bml_Contact.json,bml_DataSource.json,bml_License.json,bml_ML_Method.json,bml_Owner.json,bml_Service.json" />
+    <Parameter override="false" name="plugins.modelLoader.liquibasePath" value="" />
+    <Parameter override="false" name="plugins.modelLoader.liquibaseFiles" value="data/liquibase/tables.xml" />
+    <Parameter override="false" name="extension.customLinks.enable" value="false" />
+    <Parameter override="false" name="extension.customLinks.recurseDepth" value="1" />
+    <Parameter override="false" name="mqtt.Enabled" value="false" />
     <!-- service setting -->
     <!--
     <Parameter override="false" name="serviceRootUrl" value="http://localhost:8080/FROST-Server" />
@@ -72,10 +96,22 @@
     <Resource
         name="jdbc/sensorThings" auth="Container"
         type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
-        url="jdbc:postgresql://localhost:5432/sensorthings"
+        url="jdbc:postgresql://localhost:5432/StaTest?currentSchema=FROST"
         username="sensorthings" password="ChangeMe"
         maxTotal="20" maxIdle="10" maxWaitMillis="-1"
         defaultAutoCommit="false"
     />
     -->
+    <Parameter override="false" name="persistence.persistenceManagerImplementationClass" value="de.fraunhofer.iosb.ilt.frostserver.persistence.pgjooq.PostgresPersistenceManager" />
+    <Parameter override="false" name="persistence.idGenerationMode" value="ServerGeneratedOnly" />
+    <Parameter override="false" name="persistence.autoUpdateDatabase" value="false" />
+    <Parameter override="false" name="persistence.db_jndi_datasource" value="jdbc/sensorThings" />
+    <Resource
+        name="jdbc/sensorThings" auth="Container"
+        type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
+        url="jdbc:postgresql://localhost:5432/statest?currentSchema=frost,public"
+        username="sensorthings" password="ChangeMe"
+        maxTotal="20" maxIdle="10" maxWaitMillis="-1"
+        defaultAutoCommit="false"
+    />
 </Context>

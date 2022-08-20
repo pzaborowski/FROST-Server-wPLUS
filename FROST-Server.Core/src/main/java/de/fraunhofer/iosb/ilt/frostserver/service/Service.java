@@ -719,11 +719,14 @@ public class Service implements AutoCloseable {
             return errorResponse(response, 404, NOT_A_VALID_PATH + ": " + exc.getMessage());
         }
 
+        if (path.isRef()) {
+            return executeDeleteRef(request, response, path);
+        }
         if ((path.getMainElement() instanceof PathElementEntity)) {
             return executeDeleteEntity(request, response, path);
         }
         if (settings.isFilterDeleteEnabled() && (path.getMainElement() instanceof PathElementEntitySet)) {
-            return executeDeleteEntitySet(request, response, path);
+            return executeDeleteSet(request, response, path);
         }
         return errorResponse(response, 400, "Not a valid path for DELETE.");
     }
@@ -749,7 +752,7 @@ public class Service implements AutoCloseable {
                 return errorResponse(response, 404, NOTHING_FOUND_RESPONSE);
             }
 
-            return handleDelete(pm, mainEntity, response);
+            return handleDeleteEntity(pm, mainEntity, response);
         } catch (UnauthorizedException e) {
             rollbackAndClose(pm);
             return errorResponse(response, 401, e.getMessage());
@@ -765,7 +768,7 @@ public class Service implements AutoCloseable {
         }
     }
 
-    private ServiceResponse handleDelete(PersistenceManager pm, PathElementEntity mainEntity, ServiceResponse response) {
+    private ServiceResponse handleDeleteEntity(PersistenceManager pm, PathElementEntity mainEntity, ServiceResponse response) {
         try {
             if (pm.delete(mainEntity)) {
                 maybeCommitAndClose();
@@ -782,7 +785,7 @@ public class Service implements AutoCloseable {
         }
     }
 
-    private ServiceResponse executeDeleteEntitySet(ServiceRequest request, ServiceResponse response, ResourcePath path) {
+    private ServiceResponse executeDeleteSet(ServiceRequest request, ServiceResponse response, ResourcePath path) {
         PersistenceManager pm = null;
         try {
             PathElementEntitySet mainEntity = (PathElementEntitySet) path.getMainElement();
@@ -844,6 +847,10 @@ public class Service implements AutoCloseable {
             pm.rollbackAndClose();
             return errorResponse(response, 404, e.getMessage());
         }
+    }
+
+    private ServiceResponse executeDeleteRef(ServiceRequest request, ServiceResponse response, ResourcePath path) {
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public static ServiceResponse successResponse(ServiceResponse response, Version.CannedResponse cr) {

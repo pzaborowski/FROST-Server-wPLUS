@@ -1,0 +1,3 @@
+[submodule "Plugins/FROST-Server-PLUS"]
+	path = Plugins/FROST-Server-PLUS
+	url = https://github.com/securedimensions/FROST-Server-PLUS

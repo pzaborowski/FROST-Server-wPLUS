@@ -6,6 +6,9 @@ COPY target/docker_deps/ ${CATALINA_HOME}/lib/
 ARG ARTIFACT_FILE
 COPY target/${ARTIFACT_FILE} /tmp/FROST-Server.war
 
+RUN PATH=/bin:/usr/bin:$PATH
+RUN export PATH
+
 RUN unzip -d ${CATALINA_HOME}/webapps/FROST-Server /tmp/FROST-Server.war \
     && rm /tmp/FROST-Server.war \
     && addgroup --system --gid 1000 tomcat \

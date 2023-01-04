@@ -1,0 +1,14 @@
+From tomcat:9-jdk11
+
+COPY target/docker_deps/ ${CATALINA_HOME}/lib/
+
+# Copy to images tomcat path
+RUN mkdir ${CATALINA_HOME}/webapps/FROST-Server-wPLUS
+COPY target/FROST-Server.MQTTP-2.0.0/* ${CATALINA_HOME}/webapps/FROST-Server-wPLUS
+
+RUN addgroup --system --gid 1000 tomcat \
+    && adduser --system --uid 1000 --gid 1000 tomcat \
+    && chgrp -R 0 $CATALINA_HOME \
+    && chmod -R g=u $CATALINA_HOME
+
+USER tomcat

@@ -14,7 +14,8 @@
     <Parameter override="false" name="maxDataSize" value="25000000" />
     <Parameter override="false" name="useAbsoluteNavigationLinks" value="true" />
     <Parameter override="false" name="http.cors.enable" value="false" />
-    <Parameter override="false" name="plugins.plugins" value="" />
+    <Parameter override="false" name="plugins.plugins" value="de.securedimensions.frostserver.plugin.plus.PluginPLUS" />
+    <Parameter override="false" name="plugins.plus.enable" value="true" />
     <Parameter override="false" name="plugins.coreModel.enable" value="true" />
     <Parameter override="false" name="plugins.coreModel.idType" value="LONG" />
     <Parameter override="false" name="plugins.actuation.enable" value="false" />

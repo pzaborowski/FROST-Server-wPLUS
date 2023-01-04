@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
+    <wb-module deploy-name="FROST-Server.MQTTP-2.0.0">
+                
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="FROST-Server.Core-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Core/FROST-Server.Core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Util-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Util/FROST-Server.Util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Core.Model-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Core.Model/FROST-Server.Core.Model">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.HTTP.Common-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.HTTP.Common/FROST-Server.HTTP.Common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.Actuation-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.Actuation/FROST-Server.Plugin.Actuation">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.CoreModel-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.CoreModel/FROST-Server.Plugin.CoreModel">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.BatchProcessing-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.BatchProcessing/FROST-Server.Plugin.BatchProcessing">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.FormatCsv-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.FormatCsv/FROST-Server.Plugin.FormatCsv">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.FormatDataArray-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.FormatDataArray/FROST-Server.Plugin.FormatDataArray">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.FormatGeoJson-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.FormatGeoJson/FROST-Server.Plugin.FormatGeoJson">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.MultiDatastream-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.MultiDatastream/FROST-Server.Plugin.MultiDatastream">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.OpenApi-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.OpenApi/FROST-Server.Plugin.OpenApi">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.OData-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.OData/FROST-Server.Plugin.OData">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.ModelLoader-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.ModelLoader/FROST-Server.Plugin.ModelLoader">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.SQLjooq-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.SQLjooq/FROST-Server.SQLjooq">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.MQTT.Moquette-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.MQTT.Moquette/FROST-Server.MQTT.Moquette">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Auth.Basic-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Auth.Basic/FROST-Server.Auth.Basic">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Auth.Keycloak-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Auth.Keycloak/FROST-Server.Auth.Keycloak">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FROST-Server.Plugin.PLUS-2.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/FROST-Server.Plugin.PLUS/FROST-Server.Plugin.PLUS">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                
+        <property name="context-root" value="FROST-Server.MQTTP"/>
+                
+        <property name="java-output-path" value="/FROST-Server.MQTTP/target/classes"/>
+            
+    </wb-module>
+    
+</project-modules>

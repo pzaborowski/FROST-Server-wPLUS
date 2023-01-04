@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  web:
+    image: piotrzaborowski/frostplus:2.0
+    environment:
+      - serviceRootUrl=http://localhost:8080/FROST-Server-wPLUS
+      - plugins.multiDatastream.enable=true
+      - http_cors_enable=true
+      - http_cors_allowed_origins=*
+      - persistence_db_driver=org.postgresql.Driver
+      - persistence_db_url=jdbc:postgresql://database:5432/sensorthings
+      - persistence_db_username=sensorthings
+      - persistence_db_password=ChangeMe
+      - persistence_autoUpdateDatabase=true
+    ports:
+      - 8080:8081
+      - 1883:1884
+    depends_on:
+      - database
+
+  database:
+    image: kartoza/postgis:14-3.2
+    environment:
+      - POSTGRES_DB=sensorthings
+      - POSTGRES_USER=sensorthings
+      - POSTGRES_PASSWORD=ChangeMe
+      - POSTGRES_MULTIPLE_EXTENSIONS=postgis,hstore,postgis_topology,postgis_raster,pgrouting,uuid-ossp
+    volumes:
+      - postgis_volume:/var/lib/postgresql/data
+    ports:
+      - 5432:5433
+volumes:
+    postgis_volume:

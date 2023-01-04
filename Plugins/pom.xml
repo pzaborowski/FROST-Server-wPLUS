@@ -22,5 +22,6 @@
         <module>MultiDatastream</module>
         <module>OData</module>
         <module>OpenApi</module>
+        <module>FROST-Server-PLUS</module>
     </modules>
 </project>

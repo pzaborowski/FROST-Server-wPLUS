@@ -2,25 +2,20 @@ version: '3'
 
 services:
   web:
-    build:
-      context: ./
-      args:
-        ARTIFACT_FILE=FROST-Server.MQTTP-2.0.5+.war
-#      -t piotrzaborowski/frostplus:2.0.5p --build-arg ARTIFACT_FILE=FROST-Server.MQTTP-2.0.5+.war .
-#    image: piotrzaborowski/frostplus:2.0.5p
+    image: piotrzaborowski/frostplus:2.0.5pt
     environment:
-      - serviceRootUrl=http://localhost:8080/FROST-Server
+      - serviceRootUrl=http://defs-dev.opengis.net:8082/FROST-Server
       - plugins.multiDatastream.enable=true
       - http_cors_enable=true
       - http_cors_allowed_origins=*
       - persistence_db_driver=org.postgresql.Driver
       - persistence_db_url=jdbc:postgresql://database:5432/sensorthings
       - persistence_db_username=sensorthings
-      - persistence_db_password=ChangeMe
+      - persistence_db_password=*U&Y6t5r
       - persistence_autoUpdateDatabase=true
     ports:
-      - 8080:8080
-      - 1883:1883
+      - 8082:8080
+      - 1885:1883
     depends_on:
       - database
 
@@ -29,10 +24,10 @@ services:
     environment:
       - POSTGRES_DB=sensorthings
       - POSTGRES_USER=sensorthings
-      - POSTGRES_PASSWORD=ChangeMe
+      - POSTGRES_PASSWORD=*U&Y6t5r
     volumes:
       - postgis_volume:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - 5434:5432
 volumes:
     postgis_volume:

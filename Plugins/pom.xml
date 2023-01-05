@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.fraunhofer.iosb.ilt.FROST-Server</groupId>
         <artifactId>FROST-ServerParent</artifactId>
-        <version>2.0.5-SNAPSHOT</version>
+        <version>${build.version}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -22,5 +22,6 @@
         <module>MultiDatastream</module>
         <module>OData</module>
         <module>OpenApi</module>
+        <module>FROST-Server-PLUS</module>
     </modules>
 </project>

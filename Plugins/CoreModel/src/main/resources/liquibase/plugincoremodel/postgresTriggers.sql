@@ -21,6 +21,8 @@
 -- Updated fields are:
 -- PHENOMENON_TIME_START,PHENOMENON_TIME_END,RESULT_TIME_START,RESULT_TIME_END and OBSERVED_AREA
 -- ---------------------------------------
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 create or replace function datastreams_update_insert()
     returns trigger as
 $BODY$

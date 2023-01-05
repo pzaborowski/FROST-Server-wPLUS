@@ -13,12 +13,20 @@
     <Parameter override="false" name="maxDataSize" value="25000000" />
     <Parameter override="false" name="useAbsoluteNavigationLinks" value="true" />
     <Parameter override="false" name="http.cors.enable" value="false" />
-    <Parameter override="false" name="plugins.plugins" value="" />
     <Parameter override="false" name="plugins.actuation.enable" value="false" />
-    <Parameter override="false" name="plugins.multiDatastream.enable" value="false" />
+    <Parameter override="false" name="plugins.multiDatastream.enable" value="true" />
     <Parameter override="false" name="plugins.openApi.enable" value="false" />
     <Parameter override="false" name="extension.customLinks.enable" value="false" />
     <Parameter override="false" name="extension.customLinks.recurseDepth" value="1" />
+
+    <!-- plugins - STA PLS -->
+    <Parameter override="true" name="plugins.plugins" value="de.securedimensions.frostserver.plugin.plus.PluginPLUS" />
+    <Parameter override="true" name="plugins.plus.enable" value="true"/>
+    <Parameter override="true" name="plugins.coreModel.idType" value="LONG"/>
+    <Parameter override="true" name="plugins.plus.enable.enforceOwnership" value="true"/>
+    <Parameter override="true" name="plugins.coreModel.idType" value="LONG"/>
+    <Parameter override="true" name="plugins.plus.idType.license" value="LONG"/>
+
 
     <!-- authentication/authorisation setting -->
     <Parameter override="false" name="auth.provider" value="" />
@@ -26,7 +34,7 @@
         de.fraunhofer.iosb.ilt.frostserver.auth.basic.BasicAuthProvider
         de.fraunhofer.iosb.ilt.frostserver.auth.keycloak.KeycloakAuthProvider
     -->
-    <Parameter override="false" name="auth.allowAnonymousRead" value="false" />
+    <Parameter override="false" name="auth.allowAnonymousRead" value="true" />
     <Parameter override="false" name="auth.role.read" value="read" />
     <Parameter override="false" name="auth.role.create" value="create" />
     <Parameter override="false" name="auth.role.update" value="update" />
